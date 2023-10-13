@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class BigNumArithmetic {
 
@@ -12,7 +13,9 @@ public class BigNumArithmetic {
                     "Expected exactly 1 argument: a file name.");
         }
         String filePath = args[0];
-        FileProcessor.processFile(filePath);
+        ArrayList<String[]> calculationsList = FileProcessor.processFile(filePath);
+        String[] firstCalc = calculationsList.get(0);
+        System.out.println(firstCalc[0]+firstCalc[1]+firstCalc[2]);
     }
 }
 
