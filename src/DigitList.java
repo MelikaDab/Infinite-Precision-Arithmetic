@@ -8,6 +8,17 @@ public class DigitList {
         this.size = 0;
     }
 
+    // getters
+    public Node getHead() {
+        return head;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    /** functionalities */
+    // add new node to list
     public void add(int digit) {
         Node newNode = new Node(digit);
         if (head == null) { // if list is empty
@@ -38,6 +49,7 @@ public class DigitList {
         return current.getDigit();
     }
 
+    // print every node's value in list
     public void printList() {
         Node current = this.head;
 
@@ -47,21 +59,13 @@ public class DigitList {
         }
     }
 
-    public Node getHead() {
-        return head;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
     // make a linked list of ints out of a given string
     public static DigitList makeList(String bigNumber) {
 
         DigitList newList = new DigitList();
 
-        for (int i = bigNumber.length() - 1; i >= 0; i--) {
-            // better way of casting?? using (int) on char returns ascii value of char
+        for (int i = bigNumber.length() - 1; i >= 0; i--) { // add digits to list in reverse
+            // TODO: do u know a better way of casting?? using (int) on char returns ascii value of char
             int newDigit = Integer.parseInt(String.valueOf(bigNumber.charAt(i)));
             newList.add(newDigit);
         }
