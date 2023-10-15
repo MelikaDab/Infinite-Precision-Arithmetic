@@ -1,26 +1,21 @@
 public class HandleArithmetic {
-    private String multiplier;
-    private DigitList list1;
-    private DigitList list2;
+    public static String solveEquation(String[] nums){
+        String multiplier = nums[1];
+        DigitList list1 = DigitList.makeList(nums[0]);
+        DigitList list2 = DigitList.makeList(nums[2]);
 
-    public  HandleArithmetic(String[] nums){
-        multiplier = nums[1];
-        list1 = DigitList.makeList(nums[0]);
-        list2 = DigitList.makeList(nums[2]);
-    }
-    public String solveEquation(){
         return switch (multiplier) {
-            case "*" -> multiply();
-            case "+" -> add();
-            case "^" -> exponent();
+            case "*" -> multiply(list1, list2);
+            case "+" -> add(list1, list2);
+            case "^" -> exponent(list1, list2);
             default -> "Error";
         };
     }
 
-    private String multiply(){
+    private static String multiply(DigitList list1, DigitList list2){
         return "multiply";
     }
-    private String add(){
+    private static String add(DigitList list1, DigitList list2){
         DigitList answer = new DigitList();
         int carry = 0;
         int length = Math.max(list1.getSize(), list2.getSize());
@@ -35,7 +30,7 @@ public class HandleArithmetic {
         return answer.toString();
     }
 
-    private String exponent(){
+    private static String exponent(DigitList list1, DigitList list2){
         return "exponent";
     }
 
