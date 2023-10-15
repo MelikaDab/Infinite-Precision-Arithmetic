@@ -37,9 +37,10 @@ public class DigitList {
     // get value of a node at given index
     public int get(int index) {
         Node current = head;
-
         if (index < 0 || index >= this.size) {
-            throw new IndexOutOfBoundsException("Index out of bounds");
+            //throw new IndexOutOfBoundsException("Index out of bounds");
+            return 0;//Changed it so returns 0 if out of bounds
+
         }
 
         for (int i = 0; i < index; i++) {
@@ -59,14 +60,26 @@ public class DigitList {
         }
     }
 
+    // return a String of the list
+    public String toString() {
+        Node current = this.head;
+        StringBuilder s = new StringBuilder();
+        while (current != null) {
+            s.append(current.getDigit());
+            current = current.getNext();
+        }
+        return new StringBuilder(s.toString()).reverse().toString();
+    }
+
     // make a linked list of ints out of a given string
     public static DigitList makeList(String bigNumber) {
 
         DigitList newList = new DigitList();
 
         for (int i = bigNumber.length() - 1; i >= 0; i--) { // add digits to list in reverse
-            // TODO: do u know a better way of casting?? using (int) on char returns ascii value of char
-            int newDigit = Integer.parseInt(String.valueOf(bigNumber.charAt(i)));
+            // TODO: I think this is a clean way of doing it but let me know what u think, I just commented out the original
+            //int newDigit = Integer.parseInt(String.valueOf(bigNumber.charAt(i)));
+            int newDigit = Character.getNumericValue(bigNumber.charAt(i));
             newList.add(newDigit);
         }
 
