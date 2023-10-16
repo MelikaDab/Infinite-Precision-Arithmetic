@@ -14,12 +14,14 @@ public class BigNumArithmetic {
         }
         String filePath = args[0];
         ArrayList<String[]> calculationsList = FileProcessor.processFile(filePath);
-        String[] firstCalc = calculationsList.get(0);
-        System.out.println(firstCalc[0]+" + "+firstCalc[2]+" = "+HandleArithmetic.solveEquation(firstCalc));
-        //System.out.println(firstCalc[0]+firstCalc[1]+firstCalc[2]);
-        //DigitList firstList = DigitList.makeList("123456789");
-        //firstList.printList();
-        //System.out.println("\nsize: " + firstList.getSize());
+        //String[] firstCalc = calculationsList.get(0);
+
+        DigitList first = DigitList.makeList("3509");
+        DigitList second = DigitList.makeList("1348");
+        DigitList answer = HandleArithmetic.multiply(first, second);
+        System.out.println(answer.toString());
+        //System.out.println(firstCalc[0]+firstCalc[1]+firstCalc[2])
+
     }
 }
 
