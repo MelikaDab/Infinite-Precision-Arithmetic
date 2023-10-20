@@ -77,8 +77,7 @@ public class DigitList {
         DigitList newList = new DigitList();
 
         for (int i = bigNumber.length() - 1; i >= 0; i--) { // add digits to list in reverse
-            // TODO: I think this is a clean way of doing it but let me know what u think, I just commented out the original
-            //int newDigit = Integer.parseInt(String.valueOf(bigNumber.charAt(i)));
+
             int newDigit = Character.getNumericValue(bigNumber.charAt(i));
             newList.add(newDigit);
         }
