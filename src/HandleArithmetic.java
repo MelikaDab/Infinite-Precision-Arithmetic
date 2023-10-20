@@ -70,24 +70,4 @@ public class HandleArithmetic {
         }
     }
 
-
-    // this is what I initially had for multiply, but I realized this is probably not how we're supposed to do it
-    // bc I'm basically still storing the result which is a pretty big number in a long which kinda defeats the purpose
-    // of the assignment. wasn't fully sure so I kept it
-    /**
-     *     public static String multiply(DigitList list1, DigitList list2){
-     *         DigitList answer = new DigitList();
-     *         long num = 0;
-     *
-     *         for (int i = 0; i < list1.getSize(); i++) {
-     *             for (int j = 0; j < list2.getSize(); j++) {
-     *                 //System.out.println(list1.get(i) + " * " + list2.get(j) + " * " + Math.pow(10,i) + " * " + Math.pow(10,j));
-     *
-     *                 num += list1.get(i) * list2.get(j) * (long) Math.pow(10,i) * (long) Math.pow(10,j);
-     *                 //System.out.println(num);
-     *             }
-     *         }
-     *         return String.valueOf(num);
-     *     }*/
-
 }
