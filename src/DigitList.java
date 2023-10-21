@@ -85,8 +85,6 @@ public class DigitList {
         return newList;
     }
 
-    public void deleteAllNodes() {
-        head = null; // Set the head to null to remove the entire list
-    }
+
 
 }
