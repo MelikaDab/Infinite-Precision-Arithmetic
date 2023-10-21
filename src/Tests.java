@@ -60,8 +60,15 @@ public class Tests {
         answer.add(0);
 
         assertTrue(DigitList.equals(answer, HandleArithmetic.exponent(list1, 3)));
-
     }
 
+    @Test
+    public void testMultiply() {
+        DigitList num1 = DigitList.makeList("567");
+        DigitList num2 = DigitList.makeList("6772");
+
+        DigitList answer = DigitList.makeList("3839724");
+        assertTrue(DigitList.equals(answer, HandleArithmetic.multiply(num1, num2)));
+    }
     
 }
