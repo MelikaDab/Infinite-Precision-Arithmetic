@@ -47,7 +47,21 @@ public class Tests {
 
    }
 
+    @Test
+    public void testExponent() {
+        DigitList list1 = new DigitList();
+        DigitList answer = new DigitList();
+        list1.add(1);
+        list1.add(0);
 
+        answer.add(1);
+        answer.add(0);
+        answer.add(0);
+        answer.add(0);
+
+        assertTrue(DigitList.equals(answer, HandleArithmetic.exponent(list1, 3)));
+
+    }
 
     
 }
