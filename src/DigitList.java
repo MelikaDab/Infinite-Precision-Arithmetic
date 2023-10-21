@@ -17,14 +17,15 @@ public class DigitList {
         return size;
     }
 
-    /** functionalities */
+    /**
+     * functionalities
+     */
     // add new node to list
     public void add(int digit) {
         Node newNode = new Node(digit);
         if (head == null) { // if list is empty
             head = newNode;
-        }
-        else { // list not empty
+        } else { // list not empty
             Node current = head;
             while (current.getNext() != null) {
                 current = current.getNext();
@@ -85,6 +86,16 @@ public class DigitList {
         return newList;
     }
 
+    public static boolean equals(DigitList list1, DigitList list2) {
+        if (list1.getSize() != list2.getSize()) return false;
 
+        for (int i = 0; i < list1.getSize(); i++) {
+            if (list1.get(i) != list2.get(i)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 
 }
