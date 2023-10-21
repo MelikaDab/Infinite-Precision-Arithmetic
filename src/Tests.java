@@ -17,6 +17,7 @@ public class Tests {
 
     @Test
     public void testDigitListGet() {
+
         DigitList sample = new DigitList();
         sample.add(5);
         sample.add(8);
@@ -30,10 +31,12 @@ public class Tests {
     @Test
     public void testDigitListMakeList() {
         DigitList sample = DigitList.makeList("985");
+        DigitList answer = new DigitList();
+        answer.add(5);
+        answer.add(8);
+        answer.add(9);
 
-        assertEquals(5, sample.get(0));
-        assertEquals(8, sample.get(1));
-        assertEquals(9, sample.get(2));
+        assertTrue(DigitList.equals(answer, sample));
 
     }
 
