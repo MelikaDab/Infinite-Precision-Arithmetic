@@ -13,22 +13,8 @@ public class BigNumArithmetic {
                     "Expected exactly 1 argument: a file name.");
         }
         String filePath = args[0];
-        ArrayList<String[]> calculationsList = FileProcessor.processFile(filePath);
+        FileProcessor.processFile(filePath);
 
-        for (String[] calc : calculationsList) {
-            String result = (HandleArithmetic.solveEquation(calc)).toString();
-
-
-            if (calculationsList.indexOf(calc) == calculationsList.size() - 1) {
-                System.out.print(calc[0] + " " + calc[1] + " " + calc[2] + " = " + result);
-
-            }
-            else {
-                System.out.print(calc[0] + " " + calc[1] + " " + calc[2] + " = " + result + "\n");
-            }
-
-
-        }
         //String[] firstCalc = calculationsList.get(0);
 //
 //
